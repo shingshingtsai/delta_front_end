@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div
+        class="box-model"
+        v-for="(item, index) in Section"
+        :key="index"
+        style="position: absolute"
+        :style="{ 
+          width: item.Width * 100 + 'px', 
+          height: item.Width * 100 + 'px',
+          background: item.Color,
+          top:item.Y * 100 + 'px', 
+          left: item.X * 100 + 'px', 
+     }"
+      ></div>
+    </div>
+
+    <style>
+      .box-model {
+        border-width: 1px;
+        border-style: solid;
+      }
+    </style>
+
+    <script src="products.js" type="module"></script>
+  </body>
+</html>
